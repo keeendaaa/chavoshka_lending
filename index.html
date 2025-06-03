@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЧаВошка</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700,900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(180deg, #FF914D 0%, #fff 50%, #FF914D 100%);
+      min-height: 100vh;
+      color: #222;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 24px;
+      font-size: 14px;
+      background: #fff0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 18px;
+      font-weight: 400;
+    }
+    .logo-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .logo-top img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 8px;
+    }
+    .logo-top span {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    .main-title {
+      font-size: 96px;
+      font-weight: 900;
+      text-align: left;
+      margin: 0 0 0 16px;
+      line-height: 1;
+      letter-spacing: -2px;
+      color: #222;
+    }
+    .content-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin: 0 32px 0 16px;
+    }
+    .desc-block {
+      max-width: 420px;
+      margin-top: 32px;
+    }
+    .desc-block h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .desc-block p {
+      font-size: 16px;
+      margin: 0 0 12px 0;
+    }
+    .laptop-img {
+      margin-top: 24px;
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .laptop-img img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    }
+    .stats-block {
+      margin: 48px 0 0 16px;
+      font-size: 20px;
+      max-width: 700px;
+    }
+    .stats-block .formula {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .stats-block .result {
+      font-size: 48px;
+      font-weight: 900;
+      color: #FF914D;
+      display: inline-block;
+      margin-left: 12px;
+    }
+    .stats-block .hr-desc {
+      font-size: 16px;
+      margin: 16px 0 0 0;
+      color: #222;
+    }
+    .stats-block .hr-desc strong {
+      color: #FF914D;
+    }
+    .stats-block .note {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 4px;
+    }
+    .arrow-img {
+      margin: 24px 0 0 0;
+      width: 120px;
+    }
+    .scheme-block {
+      margin: 56px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .scheme-block img {
+      width: 420px;
+      max-width: 90vw;
+      margin-bottom: 12px;
+    }
+    .scheme-block .scheme-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #222;
+    }
+    .team-block {
+      margin: 56px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #222;
+    }
+    .team-photos {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 24px;
+    }
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-member img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      margin-bottom: 8px;
+    }
+    .team-member .name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #222;
+    }
+    .footer {
+      margin-top: 64px;
+      padding: 24px 0 12px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer img {
+      width: 420px;
+      max-width: 90vw;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 900px) {
+      .main-title { font-size: 56px; }
+      .content-row { flex-direction: column; align-items: flex-start; }
+      .laptop-img { justify-content: center; }
+      .stats-block { font-size: 16px; }
+    }
+    @media (max-width: 600px) {
+      .main-title { font-size: 32px; }
+      .logo-top img { width: 48px; height: 48px; }
+      .laptop-img img, .scheme-block img, .footer img { width: 98vw; max-width: 98vw; }
+      .team-member img { width: 120px; height: 120px; }
+      .team-photos { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div><a href="#">Перейти в сервис</a></div>
+    <div>
+      <a href="#team">Команда</a>
+      <a href="#contact">Напиши нам</a>
+    </div>
+  </div>
+  <div class="logo-top">
+    <img src="images/logo_top(2).png" alt="Логотип">
+    <span>-Знает больше, чем твой HR)</span>
+  </div>
+  <div class="main-title">ЧаВошка</div>
+  <div class="content-row">
+    <div class="desc-block">
+      <h2>Мы предлагаем сервис по созданию чат ботов для ответов на ЧаВо от новых сотрудников</h2>
+    </div>
+    <div class="laptop-img">
+      <img src="images/Dell XPS.png" alt="Интерфейс сервиса на ноутбуке">
+    </div>
+  </div>
+  <div class="stats-block">
+    <div class="formula">
+      ( 112 * 25 * 6 ) / 60 ≈ <span class="result">280</span>
+      <span style="font-size:18px; color:#FF914D; font-weight:700;">Часов в год</span>
+    </div>
+    <div class="hr-desc">
+      HR-специалисты тратят <strong>≈14,5%</strong> своего рабочего времени чтобы дать новым сотрудникам ответы на повторяющиеся вопросы
+    </div>
+    <div class="note">
+      ≈14,5% берутся при 40 часовой рабочей неделе с учетом выходных и того факта что ≈280 часов HR тратит на ответы на вопросы
+    </div>
+    <img class="arrow-img" src="images/arrow.png" alt="Стрелка">
+  </div>
+  <div class="scheme-block">
+    <div class="scheme-title">Схема работы сервиса</div>
+    <img src="images/scheme.png" alt="Схема работы">
+  </div>
+  <div class="team-block" id="team">
+    <div class="team-title">Команда разработки</div>
+    <div class="team-photos">
+      <div class="team-member">
+        <img src="images/Bot dev.png" alt="Bot dev">
+        <div class="name">Bot dev</div>
+      </div>
+      <div class="team-member">
+        <img src="images/vovka.png" alt="Frontend dev">
+        <div class="name">Frontend dev</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <img src="images/logos.png" alt="Логотипы партнёров">
+  </div>
+</body>
+</html> 
